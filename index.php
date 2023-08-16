@@ -23,8 +23,28 @@
       2- importer la class AbstractController qui se trouve dans le namespace Symfony\bundlr\FrameworkBundle\Controller.
       3- Utiliser la vcue Twig par defaut se trouvant dans le dossier "/templates".
       4- Utliliser la methode render en précisiant la vue et le s paramètres que l'on souhaite passer à la vue.
-      
-      
     </p>
+
+<?php
+namespace App\Controller;
+
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\FrameworkBundle\Controller\AbstractController;
+
+class HomeController Extends AbstractController
+  {
+    #[Route('/')]
+    public function number() : Response
+    {
+      $number = rand(0, 100);
+      return $this->render('base.html.twig', [
+                           'number' => $number,
+      ]);
+    }
+  }
+
+
+?>
   </body>
 </html>
