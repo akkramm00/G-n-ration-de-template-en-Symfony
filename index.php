@@ -16,6 +16,14 @@
 
     <h3>Méthode de génération de template</h3>
     <p>
+      Pour que le controller pyisse générer des vues en Twig, il faut que ce controller etende de la classe abstraite "AbstractController". Cette classe contient une collection de m"thodes qui donneront à nos controller plus de  fonctionnalités notamment sur la géstion des requêtes et des réponses.
+      Cette classe AbstractController contient aussi la méthode render qui permet de générer un rendu HTML depuyis les templates Twig. Donc dans notre controller initial, il va apportet quelques modifications:
+
+      1- Ajouter la mention de l'extension de la classe grâce à extends AbstractController.
+      2- importer la class AbstractController qui se trouve dans le namespace Symfony\bundlr\FrameworkBundle\Controller.
+      3- Utiliser la vcue Twig par defaut se trouvant dans le dossier "/templates".
+      4- Utliliser la methode render en précisiant la vue et le s paramètres que l'on souhaite passer à la vue.
+      
       
     </p>
   </body>
